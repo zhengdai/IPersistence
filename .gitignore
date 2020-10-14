@@ -1,2 +1,4 @@
 # Project exclude paths
 /target/
+.idea
+test/resources/sqlMapConfig-test.xml
