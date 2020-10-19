@@ -71,6 +71,7 @@ public class DefaultSqlSession implements SqlSession {
 
     @Override
     public <T> T getMapper(Class<?> mapperClass) {
+        //动态代理，生成一个代理类
         Object proxyInstance = Proxy.newProxyInstance(DefaultSqlSession.class.getClassLoader(), new Class[]{mapperClass}, new InvocationHandler() {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
